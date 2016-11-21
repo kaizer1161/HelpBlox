@@ -23,6 +23,8 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
         android:layout_weight="50"
         android:gravity="center_horizontal">
 
@@ -31,10 +33,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
             android:hint="Username or Email"
-            android:textColorHint="#000000"/>
+            android:textColorHint="#000000" />
 
         <EditText
             android:id="@+id/passwordEditText_id"
@@ -42,8 +42,6 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/usernameEditText_id"
             android:layout_marginBottom="15dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
             android:hint="Password"
             android:inputType="textPassword" />
 
@@ -52,8 +50,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/passwordEditText_id"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
             android:text="Login" />
 
         <Button
@@ -62,8 +58,6 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="20dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
             android:text="CREATE NEW ACCOUNT" />
 
     </RelativeLayout>
