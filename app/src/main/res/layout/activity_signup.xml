@@ -1,16 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="match_parent"
+    android:background="#4B515D"
+    android:orientation="vertical">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
+        android:layout_height="0dp"
+        android:layout_weight="40"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/app_name"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="60"
+        android:layout_marginBottom="15dp"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
-        android:layout_marginTop="10dp"
-        android:orientation="vertical">
+        android:gravity="center_horizontal">
 
         <EditText
             android:id="@+id/Signup_Username_id"
@@ -23,40 +40,36 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Email"
-            android:inputType="textEmailAddress" />
+            android:inputType="textEmailAddress"
+            android:layout_below="@id/Signup_Username_id"/>
 
         <EditText
             android:id="@+id/Signup_Password_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Password"
-            android:inputType="textVisiblePassword" />
+            android:inputType="textVisiblePassword"
+            android:layout_below="@id/Signup_Email_id"/>
 
         <EditText
             android:id="@+id/Signup_Password_ReEnter_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Re-Enter Password"
-            android:inputType="textVisiblePassword" />
+            android:inputType="textVisiblePassword"
+            android:layout_below="@id/Signup_Password_id"/>
 
-        <TextView
-            style="?android:listSeparatorTextViewStyle"
-            android:layout_width="fill_parent"
+        <Button
+            android:id="@+id/signupBtn_id"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="Cataory" />
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="20dp"
+            android:text="Next ->" />
 
-        <GridLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+    </RelativeLayout>
 
-            <CheckBox
-                android:id="@+id/catagory_id"
-                android:hint="Blood" />
-
-        </GridLayout>
+</LinearLayout>
 
 
-    </LinearLayout>
-
-</ScrollView>
