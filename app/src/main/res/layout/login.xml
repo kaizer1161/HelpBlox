@@ -34,7 +34,7 @@
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
             android:hint="Username or Email"
-            android:textColorHint="#000000" />
+            android:textColorHint="#000000"/>
 
         <EditText
             android:id="@+id/passwordEditText_id"
