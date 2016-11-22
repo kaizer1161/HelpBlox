@@ -37,6 +37,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        //click listener for (create new Account) Button. clicking this Button makes intent for SignupActivity.
         newAccountBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

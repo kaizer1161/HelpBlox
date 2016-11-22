@@ -1,9 +1,12 @@
 package dsd.informme.com.helpblox;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.GridView;
 
@@ -17,18 +20,27 @@ import dsd.informme.com.helpblox.R;
 
 public class SignupActivity extends AppCompatActivity {
 
+    /*
+     * All Variables are declared here.
+     */
+
+    Button nextBtn;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
 
-        ArrayList<String> category = new ArrayList<>();
+        nextBtn = (Button) findViewById(R.id.nextToCategoryBtn_id);
 
-        category.add("Blood");
-        category.add("Android");
-        category.add("iOS");
-        category.add("FootBall");
-
+        //click listener for (Next) Button. clicking this Button makes intent for CategoryActivity.
+        nextBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent categoryIntent = new Intent(SignupActivity.this, CategoryActivity.class);
+                startActivity(categoryIntent);
+            }
+        });
 
     }
 

@@ -60,7 +60,7 @@
             android:layout_below="@id/Signup_Password_id"/>
 
         <Button
-            android:id="@+id/signupBtn_id"
+            android:id="@+id/nextToCategoryBtn_id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
