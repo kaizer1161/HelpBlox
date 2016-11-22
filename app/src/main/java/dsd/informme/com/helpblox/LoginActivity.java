@@ -38,6 +38,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                //Fetching String from EditText and assigning them to variables.
                 userId = String.valueOf(idEditText.getText());
                 password = String.valueOf(passwordEditText.getText());
 
