@@ -24,7 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Mir Rayan"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium" />
+            android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/news_date_time_textView_id"
@@ -39,7 +39,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/header_linearLayout_id"
-        android:hint="This is a place holder content, to check if the layout is working properly. When database will be added, contents for this layout will be auto generated."
-        android:paddingTop="5dp" />
+        android:hint="This is a place holder content, to check if the layout is working properly. When database will be added, contents for this layout will be auto generated." />
 
 </RelativeLayout>
