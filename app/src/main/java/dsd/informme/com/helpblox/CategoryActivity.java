@@ -15,12 +15,12 @@ import java.util.ArrayList;
 
 public class CategoryActivity  extends AppCompatActivity {
 
-        ArrayList<String> categoryName = new ArrayList<>();
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category);
+
+        ArrayList<String> categoryName = new ArrayList<>();
 
         categoryName.add("Google");
         categoryName.add("Github");
@@ -84,7 +84,7 @@ public class CategoryActivity  extends AppCompatActivity {
         categoryName.add("Blogger");
 
         CategoryAdapter adapter = new CategoryAdapter(CategoryActivity.this, categoryName);
-        GridView grid = (GridView)findViewById(R.id.category_gridView_id);
+        GridView grid = (GridView) findViewById(R.id.category_gridView_id);
         grid.setAdapter(adapter);
 
     }

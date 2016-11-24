@@ -1,14 +1,13 @@
 package dsd.informme.com.helpblox;
 
-import android.content.Context;
+import android.app.Activity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.CheckBox;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
+import java.util.ArrayList;
 
 /**
  * Created by kaizer on 11/24/16.
@@ -16,10 +15,9 @@ import android.widget.TextView;
 
 public class NewsAdapter extends ArrayAdapter<NewsFeed> {
 
-    Context context;
+    public NewsAdapter(Activity context, ArrayList<NewsFeed> news) {
 
-    public NewsAdapter(Context context, int resource) {
-        super(context, resource);
+        super(context, 0, news);
     }
 
 
@@ -43,6 +41,7 @@ public class NewsAdapter extends ArrayAdapter<NewsFeed> {
             TextView dateAndTime = (TextView) listItemView.findViewById(R.id.news_date_time_textView_id);
             TextView newsContent = (TextView) listItemView.findViewById(R.id.news_content_textView_id);
 
+            //Corresponding views are populated
             userImage.setImageResource(currentNews.getImageRecourseId());
             userName.setText(currentNews.getUserName());
             dateAndTime.setText(currentNews.getTimeAndDate());
