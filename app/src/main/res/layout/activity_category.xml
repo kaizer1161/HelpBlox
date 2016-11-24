@@ -4,24 +4,28 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Select Category"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
-
-    </RelativeLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Category"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
 
     <GridView
         android:id="@+id/category_gridView_id"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="80"
         android:numColumns="auto_fit">
 
     </GridView>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_weight="10"
+        android:text="Done" />
 
 </LinearLayout>

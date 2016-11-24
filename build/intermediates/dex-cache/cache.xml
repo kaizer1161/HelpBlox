@@ -3,6 +3,15 @@
 
     <item
         is-multidex="true"
+        jar="/home/kaizer/Drive/offlineWorkspace/androidApp/HelpBlox/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="fcc945a86ebcbf527429acb8216ec7dae2c06417">
+        <dex dex="/home/kaizer/Drive/offlineWorkspace/androidApp/HelpBlox/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-24.2.0_2c6870c324694b9427e5d298e9219bbcf7118040/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/home/kaizer/Drive/offlineWorkspace/androidApp/HelpBlox/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
@@ -12,12 +21,39 @@
     </item>
     <item
         is-multidex="true"
+        jar="/home/kaizer/Drive/offlineWorkspace/androidApp/HelpBlox/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="c84e216d9bf618464d6b9564d71d9a656433e7c4">
+        <dex dex="/home/kaizer/Drive/offlineWorkspace/androidApp/HelpBlox/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-24.2.0_dc5d5f90391537824ce4885e7ae91ff14c51bd5c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/kaizer/Drive/offlineWorkspace/androidApp/HelpBlox/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.0/jars/libs/internal_impl-24.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="60d7b23621d31e6f42f4f76f16af467e57a20cda">
+        <dex dex="/home/kaizer/Drive/offlineWorkspace/androidApp/HelpBlox/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.0_f1f0682018b005839b8e5c50f1a914ce0e3698b2/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/home/kaizer/Drive/offlineWorkspace/androidApp/HelpBlox/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="0a319fcc85e8d31f7743100b3c6fa3cbdc56f4fe">
+        sha1="4e3bc03e9498a2431b93768d1e054f43d58a8131">
         <dex dex="/home/kaizer/Drive/offlineWorkspace/androidApp/HelpBlox/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_d66acb60d6e0140a6cf24d9a0148868533c5d557/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/kaizer/Drive/offlineWorkspace/androidApp/HelpBlox/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.2.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="beac40bcc8a320a896dd15f5109cfcaea5e1e0e3">
+        <dex dex="/home/kaizer/Drive/offlineWorkspace/androidApp/HelpBlox/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-24.2.0_d9ef9f91a7fe4fa45f5fd400c8fa53a7489dfb9e/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -27,6 +63,15 @@
         revision="24.0.2"
         sha1="032a4b53def5e2ceedfc2e793b126c0163cfa1dd">
         <dex dex="/home/kaizer/Drive/offlineWorkspace/androidApp/HelpBlox/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.0_fa3dc3f6964d96caa4e02126ba49b8aa86a6a1c7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/kaizer/Drive/offlineWorkspace/androidApp/HelpBlox/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.0/jars/libs/internal_impl-24.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="771b3cc0e597b54da25f8086ba73180c59c6bc71">
+        <dex dex="/home/kaizer/Drive/offlineWorkspace/androidApp/HelpBlox/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.0_3efe73756c8100f05a52d5eb02acc6bd3792ddae/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -66,60 +111,6 @@
     </item>
     <item
         is-multidex="true"
-        jar="/home/kaizer/Drive/offlineWorkspace/androidApp/HelpBlox/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.0/jars/libs/internal_impl-24.2.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="045be695d968dd707691cc55d23746dbf8cf569a">
-        <dex dex="/home/kaizer/Drive/offlineWorkspace/androidApp/HelpBlox/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.0_317ae41f50ed79c0b8f77b47e92dfc9f64057a88/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/kaizer/Drive/offlineWorkspace/androidApp/HelpBlox/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="fcc945a86ebcbf527429acb8216ec7dae2c06417">
-        <dex dex="/home/kaizer/Drive/offlineWorkspace/androidApp/HelpBlox/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-24.2.0_2c6870c324694b9427e5d298e9219bbcf7118040/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/kaizer/Drive/offlineWorkspace/androidApp/HelpBlox/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="c84e216d9bf618464d6b9564d71d9a656433e7c4">
-        <dex dex="/home/kaizer/Drive/offlineWorkspace/androidApp/HelpBlox/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-24.2.0_dc5d5f90391537824ce4885e7ae91ff14c51bd5c/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/kaizer/Drive/offlineWorkspace/androidApp/HelpBlox/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.0/jars/libs/internal_impl-24.2.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="60d7b23621d31e6f42f4f76f16af467e57a20cda">
-        <dex dex="/home/kaizer/Drive/offlineWorkspace/androidApp/HelpBlox/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.0_f1f0682018b005839b8e5c50f1a914ce0e3698b2/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/kaizer/Drive/offlineWorkspace/androidApp/HelpBlox/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.2.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="beac40bcc8a320a896dd15f5109cfcaea5e1e0e3">
-        <dex dex="/home/kaizer/Drive/offlineWorkspace/androidApp/HelpBlox/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-24.2.0_d9ef9f91a7fe4fa45f5fd400c8fa53a7489dfb9e/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/kaizer/Drive/offlineWorkspace/androidApp/HelpBlox/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.0/jars/libs/internal_impl-24.2.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="771b3cc0e597b54da25f8086ba73180c59c6bc71">
-        <dex dex="/home/kaizer/Drive/offlineWorkspace/androidApp/HelpBlox/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.0_3efe73756c8100f05a52d5eb02acc6bd3792ddae/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="/home/kaizer/Drive/offlineWorkspace/androidApp/HelpBlox/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.0/jars/libs/internal_impl-24.2.0.jar"
         jumboMode="true"
         optimize="true"
@@ -153,6 +144,15 @@
         revision="24.0.2"
         sha1="d8bd2268fdcbfd52c76ade65d9900cd8def93a44">
         <dex dex="/home/kaizer/Drive/offlineWorkspace/androidApp/HelpBlox/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-24.2.0_6ab8e89f0112e73355608bb492858feaaa7f88bb/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/kaizer/Drive/offlineWorkspace/androidApp/HelpBlox/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.0/jars/libs/internal_impl-24.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="045be695d968dd707691cc55d23746dbf8cf569a">
+        <dex dex="/home/kaizer/Drive/offlineWorkspace/androidApp/HelpBlox/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.0_317ae41f50ed79c0b8f77b47e92dfc9f64057a88/classes.dex" />
     </item>
 
 </items>

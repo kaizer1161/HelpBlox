@@ -9,7 +9,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name="dsd.informme.com.helpblox.LoginActivity">
+        <activity android:name="dsd.informme.com.helpblox.LoginActivity"
+            android:theme="@style/LoginTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,12 +24,14 @@
         </activity>
 
         <activity android:name="dsd.informme.com.helpblox.SignupActivity"
-            android:label="@string/app_name">
+            android:label="@string/signupPage"
+            android:theme="@style/SignupTheme">
 
         </activity>
 
         <activity android:name="dsd.informme.com.helpblox.CategoryActivity"
-            android:label="@string/app_name">
+            android:label="@string/categoryPage"
+            android:theme="@style/SignupTheme">
 
         </activity>
 
