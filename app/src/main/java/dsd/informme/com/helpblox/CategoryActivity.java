@@ -86,15 +86,6 @@ public class CategoryActivity  extends AppCompatActivity {
         CategoryAdapter adapter = new CategoryAdapter(CategoryActivity.this, categoryName);
         GridView grid = (GridView)findViewById(R.id.category_gridView_id);
         grid.setAdapter(adapter);
-        grid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view,
-                                    int position, long id) {
-                Toast.makeText(CategoryActivity.this, "You Clicked at " +categoryName, Toast.LENGTH_SHORT).show();
-
-            }
-        });
 
     }
 
