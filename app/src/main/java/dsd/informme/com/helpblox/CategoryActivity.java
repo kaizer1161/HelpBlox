@@ -1,9 +1,11 @@
 package dsd.informme.com.helpblox;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.GridView;
 import android.widget.Toast;
 
@@ -15,11 +17,12 @@ import java.util.ArrayList;
 
 public class CategoryActivity  extends AppCompatActivity {
 
+    Button nextBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category);
-
+        nextBtn = (Button) findViewById(R.id.nextToPPicBtn_id);
         ArrayList<String> categoryName = new ArrayList<>();
 
         categoryName.add("Google");
@@ -86,6 +89,21 @@ public class CategoryActivity  extends AppCompatActivity {
         CategoryAdapter adapter = new CategoryAdapter(CategoryActivity.this, categoryName);
         GridView grid = (GridView) findViewById(R.id.category_gridView_id);
         grid.setAdapter(adapter);
+
+        nextBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                //Fetching String from EditText and assigning them to variables.
+                //userName = String.valueOf(userEditText.getText());
+                //emailId = String.valueOf(userEditText.getText());
+                //password = String.valueOf(passwordEditText.getText());
+                //reEnteredPassword = String.valueOf(reEnteredPassEditText.getText());
+
+                Intent ppicIntent = new Intent(CategoryActivity.this, ProfilePicActivity.class);
+                startActivity(ppicIntent);
+            }
+        });
 
     }
 

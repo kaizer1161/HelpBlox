@@ -21,11 +21,12 @@
     </GridView>
 
     <Button
+        android:id="@+id/nextToPPicBtn_id"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_weight="10"
-        android:text="Done" />
+        android:text="Next" />
 
 </LinearLayout>
