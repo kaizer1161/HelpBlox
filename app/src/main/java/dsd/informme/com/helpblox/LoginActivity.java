@@ -42,7 +42,7 @@ public class LoginActivity extends AppCompatActivity {
                 userId = String.valueOf(idEditText.getText());
                 password = String.valueOf(passwordEditText.getText());
 
-                Intent loginIntent = new Intent(LoginActivity.this, MainActivity.class);
+                Intent loginIntent = new Intent(LoginActivity.this, NewsFeed.class);
                 startActivity(loginIntent);
             }
         });
