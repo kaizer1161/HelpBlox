@@ -7,5 +7,5 @@
     android:dividerHeight="10.0dp"
     tools:context="dsd.informme.com.helpblox.MainActivity" >
 
-
     </ListView>
+
