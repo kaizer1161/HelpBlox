@@ -13,9 +13,9 @@ import java.util.ArrayList;
  * Created by kaizer on 11/24/16.
  */
 
-public class NewsAdapter extends ArrayAdapter<NewsFeed> {
+public class NewsAdapter extends ArrayAdapter<NewsFeedContent> {
 
-    public NewsAdapter(Activity context, ArrayList<NewsFeed> news) {
+    public NewsAdapter(Activity context, ArrayList<NewsFeedContent> news) {
 
         super(context, 0, news);
     }
@@ -30,7 +30,7 @@ public class NewsAdapter extends ArrayAdapter<NewsFeed> {
                     R.layout.activity_news_layout, parent, false);
 
             //gets item position of the current news.
-            NewsFeed currentNews = getItem(position);
+            NewsFeedContent currentNews = getItem(position);
 
 
             // Finding  all the View in activity_news_layout.xml with the ID and
