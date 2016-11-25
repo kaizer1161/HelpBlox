@@ -15,6 +15,7 @@ public class ProfilePicActivity extends Activity {
 
 
     private static int RESULT_LOAD_IMAGE = 1;
+    Button buttonSkip,buttonLoadImage;
 
 
     @Override
@@ -22,7 +23,8 @@ public class ProfilePicActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_pic);
 
-        Button buttonLoadImage = (Button) findViewById(R.id.buttonLoadPicture);
+        buttonSkip = (Button) findViewById(R.id.buttonSkip);
+        buttonLoadImage = (Button) findViewById(R.id.buttonLoadPicture);
         buttonLoadImage.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -33,6 +35,21 @@ public class ProfilePicActivity extends Activity {
                         android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
 
                 startActivityForResult(i, RESULT_LOAD_IMAGE);
+            }
+        });
+
+        buttonSkip.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                //Fetching String from EditText and assigning them to variables.
+                //userName = String.valueOf(userEditText.getText());
+                //emailId = String.valueOf(userEditText.getText());
+                //password = String.valueOf(passwordEditText.getText());
+                //reEnteredPassword = String.valueOf(reEnteredPassEditText.getText());
+
+                Intent skip = new Intent(ProfilePicActivity.this, MainActivity.class);
+                startActivity(skip);
             }
         });
     }
