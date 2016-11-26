@@ -6,9 +6,10 @@
     android:layout_height="fill_parent">
     <ImageView
         android:id="@+id/imgView"
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"></ImageView>
+        android:layout_weight="1"/>
+
     <Button
         android:id="@+id/buttonLoadPicture"
         android:layout_width="match_parent"
@@ -16,6 +17,7 @@
         android:layout_weight="0"
         android:text="Load Picture From gallery"
         android:layout_gravity="center"/>
+
     <Button
         android:id="@+id/buttonSkip"
         android:layout_width="match_parent"
