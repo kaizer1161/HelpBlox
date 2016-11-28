@@ -8,7 +8,6 @@ import android.widget.BaseAdapter;
 import android.widget.CheckBox;
 import java.util.ArrayList;
 
-
 /**
  * Created by kaizer on 11/21/16.
  */
@@ -42,18 +41,17 @@ public class CategoryAdapter extends BaseAdapter{
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        View grid;
-        LayoutInflater inflater = (LayoutInflater) context
-                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View grid = convertView;
 
         if (convertView == null) {
-
+            LayoutInflater inflater = (LayoutInflater) context
+                    .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             grid = inflater.inflate(R.layout.activity_category_grid, null);
-            CheckBox checkBox = (CheckBox) grid.findViewById(R.id.checkbox_id);
-            checkBox.setText(nameOfCategory.get(position));
-        } else {
-            grid = convertView;
+
         }
+
+        CheckBox checkBox = (CheckBox) grid.findViewById(R.id.checkbox_id);
+        checkBox.setText(nameOfCategory.get(position));
 
         return grid;
     }

@@ -28,6 +28,7 @@ public class NewsAdapter extends ArrayAdapter<NewsFeedContent> {
         if(listItemView == null) {
             listItemView = LayoutInflater.from(getContext()).inflate(
                     R.layout.activity_news_layout, parent, false);
+        }
 
             //gets item position of the current news.
             NewsFeedContent currentNews = getItem(position);
@@ -46,8 +47,6 @@ public class NewsAdapter extends ArrayAdapter<NewsFeedContent> {
             userName.setText(currentNews.getUserName());
             dateAndTime.setText(currentNews.getTimeAndDate());
             newsContent.setText(currentNews.getNewsContent());
-
-        }
 
         return listItemView;
     }
