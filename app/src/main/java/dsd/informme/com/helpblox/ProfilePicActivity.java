@@ -48,7 +48,7 @@ public class ProfilePicActivity extends Activity {
                 //password = String.valueOf(passwordEditText.getText());
                 //reEnteredPassword = String.valueOf(reEnteredPassEditText.getText());
 
-                Intent skip = new Intent(ProfilePicActivity.this, NewsFeed.class);
+                Intent skip = new Intent(ProfilePicActivity.this, DashBoard.class);
                 startActivity(skip);
             }
         });

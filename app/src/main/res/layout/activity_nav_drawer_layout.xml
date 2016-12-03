@@ -9,7 +9,7 @@
     tools:openDrawer="start">
 
     <include
-        layout="@layout/app_bar_news_feed"
+        layout="@layout/app_bar_dash_board"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
@@ -19,7 +19,18 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
-        app:headerLayout="@layout/nav_header_news_feed"
-        app:menu="@menu/activity_news_feed_drawer" />
+        app:headerLayout="@layout/header_nav_drawer"
+        app:menu="@menu/activity_nav_drawer_items">
+
+        <Button
+            android:id="@+id/logoutBtn_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_margin="10dp"
+            android:background="#D50000"
+            android:text="@string/LogOut_Button" />
+
+    </android.support.design.widget.NavigationView>
 
 </android.support.v4.widget.DrawerLayout>
