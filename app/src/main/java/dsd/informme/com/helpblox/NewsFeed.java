@@ -28,6 +28,8 @@ public class NewsFeed extends Fragment {
         //arraylist for feed
         ArrayList<NewsFeedContent> news = new ArrayList<>();
 
+        news.add(new NewsFeedContent(R.mipmap.ic_launcher));
+
         news.add(new NewsFeedContent(R.mipmap.ic_launcher, "Mir Rayan", "Oct 16, 05:54pm", "This is a place holder content, to check if the layout is working properly. When database will be added, contents for this layout will be auto generated."));
 
         news.add(new NewsFeedContent(R.mipmap.ic_launcher, "Proma", "Nov 16, 10:54am", "This is a place holder content, to check if the layout is working properly. When database will be added, contents for this layout will be auto generated."));

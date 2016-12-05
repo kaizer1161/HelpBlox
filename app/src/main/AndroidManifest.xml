@@ -29,7 +29,7 @@
             android:theme="@style/SignupTheme" />
         <activity android:name=".ProfilePicActivity" />
         <activity
-            android:name=".NewsFeed"
+            android:name=".DashBoard"
             android:label="@string/title_activity_news_feed"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>

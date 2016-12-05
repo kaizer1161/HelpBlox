@@ -20,6 +20,11 @@ public class NewsFeedContent {
 
     }
 
+    public NewsFeedContent(int imageResourceId) {
+
+        this.imageResourceId = imageResourceId;
+    }
+
     public int getImageRecourseId(){
 
         return imageResourceId;
