@@ -119,6 +119,8 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
     public void onClick(View v) {
         if(v == nextBtn){
             registerUser();
+            Intent categoryIntent = new Intent(SignupActivity.this, CategoryActivity.class);
+            startActivity(categoryIntent);
         }
     }
 }
