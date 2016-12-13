@@ -37,7 +37,6 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
     EditText userEditText, emailEditText, passwordEditText, reEnteredPassEditText;
     RequestQueue requestQueue;
 
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -98,8 +97,24 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
             String email = emailEditText.getText().toString().trim();
             String rePass = reEnteredPassEditText.getText().toString().trim();
 
-            if((username.equals("")) || (password.equals("")) || (email.equals("")) || (rePass.equals("")))
-            Toast.makeText(SignupActivity.this, "Have to Fill All the Info Dude", Toast.LENGTH_LONG).show();
+//            if((username.equals("")) || (password.equals("")) || (email.equals("")) || (rePass.equals("")))
+//            Toast.makeText(SignupActivity.this, "Have to Fill All the Info Dude", Toast.LENGTH_LONG).show();
+            if (username.trim().equals("")){
+                userEditText.setError("username required!");
+            }
+            else if(email.trim().equals("")){
+                emailEditText.setError("email is missing!");
+                Toast.makeText(SignupActivity.this, "email is missing!", Toast.LENGTH_SHORT).show();
+            }
+            else if(password.trim().equals("") || password.length()<5){
+                passwordEditText.setError("password length should be greater than 4 or can't be blank");
+                Toast.makeText(SignupActivity.this, "password length should be greater than 4 or can't be blank", Toast.LENGTH_SHORT).show();
+            }
+            else if (rePass.trim().equals("")){
+                reEnteredPassEditText.setError("can't be blank");
+                Toast.makeText(SignupActivity.this, "can't be blank", Toast.LENGTH_SHORT).show();
+
+            }
             else if(!password.equals(rePass)){
                 Toast.makeText(SignupActivity.this, "Password Doesn't Match", Toast.LENGTH_LONG).show();
             }

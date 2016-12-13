@@ -33,7 +33,8 @@
             android:id="@+id/Signup_Username_EditText_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Username" />
+            android:hint="Username"
+            android:maxLength="29" />
 
         <EditText
             android:id="@+id/Signup_Email_EditText_id"
@@ -41,7 +42,8 @@
             android:layout_height="wrap_content"
             android:hint="Email"
             android:inputType="textEmailAddress"
-            android:layout_below="@id/Signup_Username_EditText_id"/>
+            android:layout_below="@id/Signup_Username_EditText_id"
+            android:maxLength="63"/>
 
         <EditText
             android:id="@+id/Signup_Password_EditText_id"
@@ -49,7 +51,8 @@
             android:layout_height="wrap_content"
             android:hint="Password"
             android:inputType="textPassword"
-            android:layout_below="@id/Signup_Email_EditText_id"/>
+            android:layout_below="@id/Signup_Email_EditText_id"
+            android:maxLength="30"/>
 
         <EditText
             android:id="@+id/Signup_Password_ReEnter_EditText_id"
@@ -57,7 +60,8 @@
             android:layout_height="wrap_content"
             android:hint="Re-Enter Password"
             android:inputType="textPassword"
-            android:layout_below="@id/Signup_Password_EditText_id"/>
+            android:layout_below="@id/Signup_Password_EditText_id"
+            android:maxLength="30"/>
 
         <Button
             android:id="@+id/nextToCategoryBtn_id"
