@@ -71,15 +71,8 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
                     @Override
                     public void onErrorResponse(VolleyError error) {
 
-                        if (username.equals(null) || email.equals(null) || password.equals(null) || rePass.equals(null)) {
-                            Toast.makeText(SignupActivity.this, "Have to Fill All the Info Dude", Toast.LENGTH_LONG).show();
-                        }
-                        else if(!password.equals(rePass)){
-                            Toast.makeText(SignupActivity.this, "Password Doesn't Match", Toast.LENGTH_LONG).show();
-                        }
-                        else {
-                            Toast.makeText(SignupActivity.this, "No Internet Connection", Toast.LENGTH_LONG).show();
-                        }
+                        Toast.makeText(SignupActivity.this, "No Internet Connection", Toast.LENGTH_LONG).show();
+
                     }
                 }) {
             @Override
@@ -105,11 +98,14 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
             String email = emailEditText.getText().toString().trim();
             String rePass = reEnteredPassEditText.getText().toString().trim();
 
-            if((username.equals(null)) || (password.equals(null)) || (email.equals(null)) || (rePass.equals(null)))
+            if((username.equals("")) || (password.equals("")) || (email.equals("")) || (rePass.equals("")))
+            Toast.makeText(SignupActivity.this, "Have to Fill All the Info Dude", Toast.LENGTH_LONG).show();
+            else if(!password.equals(rePass)){
+                Toast.makeText(SignupActivity.this, "Password Doesn't Match", Toast.LENGTH_LONG).show();
+            }
+            else
                 registerUser(username, password, email, rePass);
 
-            else
-                Toast.makeText(SignupActivity.this, "Have to Fill All the Info Dude", Toast.LENGTH_LONG).show();
         }
 
     }
