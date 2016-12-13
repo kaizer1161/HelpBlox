@@ -43,11 +43,8 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
     public static final String KEY_EMAIL = "email";
 
     Button nextBtn;
-    String userName, emailId, password, reEnteredPassword;
     EditText userEditText, emailEditText, passwordEditText, reEnteredPassEditText;
     RequestQueue requestQueue;
-    //String insertURL = "http://test.artefactplus.com/index.php";
-    //String showURL = "http://test.artefactplus.com/show.php";
 
 
     @Override
@@ -65,62 +62,61 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
         requestQueue = Volley.newRequestQueue(getApplicationContext());
 
         nextBtn.setOnClickListener(this);
-        //click listener for (Next) Button. clicking this Button makes intent for CategoryActivity.
-//        nextBtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//                //Fetching String from EditText and assigning them to variables.
-//                userName = String.valueOf(userEditText.getText());
-//                emailId = String.valueOf(userEditText.getText());
-//                password = String.valueOf(passwordEditText.getText());
-//                reEnteredPassword = String.valueOf(reEnteredPassEditText.getText());
-//                Intent categoryIntent = new Intent(SignupActivity.this, CategoryActivity.class);
-//                startActivity(categoryIntent);
-//            }
-//        });
 
     }
 
-    private void registerUser(){
+    private void registerUser() {
+
         final String username = userEditText.getText().toString().trim();
         final String password = passwordEditText.getText().toString().trim();
         final String email = emailEditText.getText().toString().trim();
+        final String rePass = reEnteredPassEditText.getText().toString().trim();
+
+
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, REGISTER_URL,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        Toast.makeText(SignupActivity.this,"Successfully Registered",Toast.LENGTH_LONG).show();
+                        Toast.makeText(SignupActivity.this, "Successfully Registered", Toast.LENGTH_LONG).show();
+                        Intent i = new Intent(getApplicationContext(), CategoryActivity.class);
+                        startActivity(i);
                     }
                 },
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(SignupActivity.this,"No Internet Connection",Toast.LENGTH_LONG).show();
+
+                        if (username.equals("") || email.equals("") || password.equals("") || rePass.equals("")) {
+                            Toast.makeText(SignupActivity.this, "Have to Fill All the Info Dude", Toast.LENGTH_LONG).show();
+                        }
+                        else if(!password.equals(rePass)){
+                            Toast.makeText(SignupActivity.this, "Password Doesn't Match", Toast.LENGTH_LONG).show();
+                        }
+                        else {
+                            Toast.makeText(SignupActivity.this, "No Internet Connection", Toast.LENGTH_LONG).show();
+                        }
                     }
-                }){
+                }) {
             @Override
-            protected Map<String,String> getParams(){
-                Map<String,String> params = new HashMap<String, String>();
-                params.put(KEY_USERNAME,username);
-                params.put(KEY_PASSWORD,password);
+            protected Map<String, String> getParams() {
+                Map<String, String> params = new HashMap<String, String>();
+                params.put(KEY_USERNAME, username);
+                params.put(KEY_PASSWORD, password);
                 params.put(KEY_EMAIL, email);
                 return params;
             }
 
         };
-
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
     }
 
     @Override
     public void onClick(View v) {
-        if(v == nextBtn){
+        if (v == nextBtn) {
             registerUser();
-            Intent categoryIntent = new Intent(SignupActivity.this, CategoryActivity.class);
-            startActivity(categoryIntent);
         }
+
     }
 }
