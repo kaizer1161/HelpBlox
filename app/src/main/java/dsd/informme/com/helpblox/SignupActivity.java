@@ -5,27 +5,18 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.GridView;
 import android.widget.Toast;
-
-import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import dsd.informme.com.helpblox.R;
 
 /**
  * Created by kaizer on 11/21/16.
@@ -65,14 +56,7 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
 
     }
 
-    private void registerUser() {
-
-        final String username = userEditText.getText().toString().trim();
-        final String password = passwordEditText.getText().toString().trim();
-        final String email = emailEditText.getText().toString().trim();
-        final String rePass = reEnteredPassEditText.getText().toString().trim();
-
-
+    private void registerUser(final String username, final String password, final String email, final String rePass) {
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, REGISTER_URL,
                 new Response.Listener<String>() {
@@ -87,7 +71,7 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
                     @Override
                     public void onErrorResponse(VolleyError error) {
 
-                        if (username.equals("") || email.equals("") || password.equals("") || rePass.equals("")) {
+                        if (username.equals(null) || email.equals(null) || password.equals(null) || rePass.equals(null)) {
                             Toast.makeText(SignupActivity.this, "Have to Fill All the Info Dude", Toast.LENGTH_LONG).show();
                         }
                         else if(!password.equals(rePass)){
@@ -115,7 +99,17 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
     @Override
     public void onClick(View v) {
         if (v == nextBtn) {
-            registerUser();
+
+            String username = userEditText.getText().toString().trim();
+            String password = passwordEditText.getText().toString().trim();
+            String email = emailEditText.getText().toString().trim();
+            String rePass = reEnteredPassEditText.getText().toString().trim();
+
+            if((username.equals(null)) || (password.equals(null)) || (email.equals(null)) || (rePass.equals(null)))
+                registerUser(username, password, email, rePass);
+
+            else
+                Toast.makeText(SignupActivity.this, "Have to Fill All the Info Dude", Toast.LENGTH_LONG).show();
         }
 
     }
