@@ -16,6 +16,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.regex.Pattern;
 
 
 /**
@@ -47,6 +48,7 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
         emailEditText = (EditText) findViewById(R.id.Signup_Email_EditText_id);
         passwordEditText = (EditText) findViewById(R.id.Signup_Password_EditText_id);
         reEnteredPassEditText = (EditText) findViewById(R.id.Signup_Password_ReEnter_EditText_id);
+        String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
         requestQueue = Volley.newRequestQueue(getApplicationContext());
 
         nextBtn.setOnClickListener(this);
@@ -95,25 +97,39 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
             if (username.trim().equals("")){
                 userEditText.setError("username required!");
             }
+            else if(!isValidEmaillId(email.toString().trim())){
+                //Toast.makeText(getApplicationContext(), "Valid Email Address.", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(), "InValid Email Address.", Toast.LENGTH_SHORT).show();
+                emailEditText.setError("Invalid Email Address");
+            }
             else if(email.trim().equals("")){
                 emailEditText.setError("email is missing!");
-                Toast.makeText(SignupActivity.this, "email is missing!", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(SignupActivity.this, "email is missing!", Toast.LENGTH_SHORT).show();
             }
             else if(password.trim().equals("") || password.length()<5){
                 passwordEditText.setError("password length should be greater than 4 or can't be blank");
-                Toast.makeText(SignupActivity.this, "password length should be greater than 4 or can't be blank", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(SignupActivity.this, "password length should be greater than 4 or can't be blank", Toast.LENGTH_SHORT).show();
             }
             else if (rePass.trim().equals("")){
                 reEnteredPassEditText.setError("can't be blank");
-                Toast.makeText(SignupActivity.this, "can't be blank", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(SignupActivity.this, "can't be blank", Toast.LENGTH_SHORT).show();
             }
             else if(!password.equals(rePass)){
                 reEnteredPassEditText.setError("password doesn't matched");
-                Toast.makeText(SignupActivity.this, "Password Doesn't Match", Toast.LENGTH_LONG).show();
+                //Toast.makeText(SignupActivity.this, "Password Doesn't Match", Toast.LENGTH_LONG).show();
             }
             else
                 registerUser(username, password, email, rePass);
         }
 
+    }
+    private boolean isValidEmaillId(String email){
+
+        return Pattern.compile("^(([\\w-]+\\.)+[\\w-]+|([a-zA-Z]{1}|[\\w-]{2,}))@"
+                + "((([0-1]?[0-9]{1,2}|25[0-5]|2[0-4][0-9])\\.([0-1]?"
+                + "[0-9]{1,2}|25[0-5]|2[0-4][0-9])\\."
+                + "([0-1]?[0-9]{1,2}|25[0-5]|2[0-4][0-9])\\.([0-1]?"
+                + "[0-9]{1,2}|25[0-5]|2[0-4][0-9])){1}|"
+                + "([a-zA-Z]+[\\w-]+\\.)+[a-zA-Z]{2,4})$").matcher(email).matches();
     }
 }
