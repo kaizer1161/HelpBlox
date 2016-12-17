@@ -39,6 +39,19 @@ public class CategoryAdapter extends BaseAdapter{
     }
 
     @Override
+    public int getItemViewType(int position) {
+        return 0;
+    }
+
+    @Override
+    public int getViewTypeCount() {
+        // TODO Auto-generated method stub
+        if (getCount() != 0)
+            return getCount();
+        return 2;
+    }
+
+    @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
         View grid = convertView;

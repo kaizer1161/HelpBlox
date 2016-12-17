@@ -41,9 +41,7 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
-
         //Attaching all widgets to their corresponding viewID;
-
         nextBtn = (Button) findViewById(R.id.nextToCategoryBtn_id);
         userEditText = (EditText) findViewById(R.id.Signup_Username_EditText_id);
         emailEditText = (EditText) findViewById(R.id.Signup_Email_EditText_id);
@@ -52,7 +50,6 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
         requestQueue = Volley.newRequestQueue(getApplicationContext());
 
         nextBtn.setOnClickListener(this);
-
     }
 
     private void registerUser(final String username, final String password, final String email, final String rePass) {
@@ -69,11 +66,10 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-
                         Toast.makeText(SignupActivity.this, "No Internet Connection", Toast.LENGTH_LONG).show();
-
                     }
-                }) {
+                })
+        {
             @Override
             protected Map<String, String> getParams() {
                 Map<String, String> params = new HashMap<String, String>();
@@ -87,7 +83,6 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
     }
-
     @Override
     public void onClick(View v) {
         if (v == nextBtn) {
@@ -97,8 +92,6 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
             String email = emailEditText.getText().toString().trim();
             String rePass = reEnteredPassEditText.getText().toString().trim();
 
-//            if((username.equals("")) || (password.equals("")) || (email.equals("")) || (rePass.equals("")))
-//            Toast.makeText(SignupActivity.this, "Have to Fill All the Info Dude", Toast.LENGTH_LONG).show();
             if (username.trim().equals("")){
                 userEditText.setError("username required!");
             }
@@ -113,14 +106,13 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
             else if (rePass.trim().equals("")){
                 reEnteredPassEditText.setError("can't be blank");
                 Toast.makeText(SignupActivity.this, "can't be blank", Toast.LENGTH_SHORT).show();
-
             }
             else if(!password.equals(rePass)){
+                reEnteredPassEditText.setError("password doesn't matched");
                 Toast.makeText(SignupActivity.this, "Password Doesn't Match", Toast.LENGTH_LONG).show();
             }
             else
                 registerUser(username, password, email, rePass);
-
         }
 
     }
