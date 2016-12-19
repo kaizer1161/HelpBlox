@@ -48,7 +48,6 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
         emailEditText = (EditText) findViewById(R.id.Signup_Email_EditText_id);
         passwordEditText = (EditText) findViewById(R.id.Signup_Password_EditText_id);
         reEnteredPassEditText = (EditText) findViewById(R.id.Signup_Password_ReEnter_EditText_id);
-        String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
         requestQueue = Volley.newRequestQueue(getApplicationContext());
 
         nextBtn.setOnClickListener(this);
@@ -94,6 +93,7 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
             String email = emailEditText.getText().toString().trim();
             String rePass = reEnteredPassEditText.getText().toString().trim();
 
+            //condition for validation error message;
             if (username.trim().equals("")){
                 userEditText.setError("username required!");
             }
@@ -123,6 +123,8 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
         }
 
     }
+
+    //function for email validation;
     private boolean isValidEmaillId(String email){
 
         return Pattern.compile("^(([\\w-]+\\.)+[\\w-]+|([a-zA-Z]{1}|[\\w-]{2,}))@"
