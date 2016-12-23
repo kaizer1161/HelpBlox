@@ -1,6 +1,7 @@
 package dsd.informme.com.helpblox;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -34,12 +35,20 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public static final String KEY_PASSWORD="password";
 
     Button loginBtn, newAccountBtn;
-    String email, password;
+    String email, password, username;
     EditText idEditText, passwordEditText;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //see if the user is logged in shared memory
+        //then redirect to dashboard
+        if(getSharedPreferences("informme", 0).getBoolean("isLoggedIn", false)){
+            Intent intent = new Intent(this, DashBoard.class);
+            startActivity(intent);
+        }
+
         setContentView(R.layout.activity_login);
 
         //Attaching all the widgets to their corresponding view id.
@@ -69,6 +78,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     @Override
                     public void onResponse(String response) {
                         if(response.trim().equals("success")){
+                            SharedPreferences sp = getSharedPreferences("informme", 0);
+                            SharedPreferences.Editor editor = sp.edit();
+                            editor.putBoolean("isLoggedIn", true);
+                            editor.apply();
                             openProfile();
                         }
                         else{
@@ -97,7 +110,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     private void openProfile(){
         Intent intent = new Intent(this, DashBoard.class);
-        intent.putExtra(KEY_EMAIL, email);
+        intent.putExtra(KEY_EMAIL,email);
         startActivity(intent);
     }
 

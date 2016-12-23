@@ -33,7 +33,7 @@
             android:id="@+id/Signup_Username_EditText_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Username"
+            android:hint="Full Name"
             android:maxLength="29" />
 
         <EditText

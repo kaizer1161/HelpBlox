@@ -48,8 +48,8 @@ public class ProfilePicActivity extends Activity {
                 //password = String.valueOf(passwordEditText.getText());
                 //reEnteredPassword = String.valueOf(reEnteredPassEditText.getText());
 
-                Intent skip = new Intent(ProfilePicActivity.this, DashBoard.class);
-                startActivity(skip);
+                Intent intent = new Intent(ProfilePicActivity.this, LoginActivity.class);
+                startActivity(intent);
             }
         });
     }
