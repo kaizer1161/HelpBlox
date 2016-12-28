@@ -3,6 +3,7 @@ package dsd.informme.com.helpblox;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -110,8 +111,16 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     private void openProfile(){
         Intent intent = new Intent(this, DashBoard.class);
-        intent.putExtra(KEY_EMAIL,email);
+        saveUserEmail();
         startActivity(intent);
+    }
+
+    //This method saves user Email address on SharedPreference, for later use on other activity.
+    private void saveUserEmail(){
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString(KEY_EMAIL, email);
+        editor.apply();
     }
 
     @Override
