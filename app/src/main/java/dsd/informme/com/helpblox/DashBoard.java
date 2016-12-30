@@ -113,9 +113,8 @@ public class DashBoard extends AppCompatActivity implements NavigationView.OnNav
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        //textView.setText("Name:\t"+name);
+        //set the username -- that is fetched from database
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        //navigationView.setNavigationItemSelectedListener(this);
         ((TextView) navigationView.getHeaderView(0).findViewById(R.id.textViewUserName)).setText(name);
 
     }
