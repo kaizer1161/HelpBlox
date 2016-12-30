@@ -18,6 +18,17 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import static dsd.informme.com.helpblox.LoginActivity.KEY_EMAIL;
 
@@ -27,7 +38,7 @@ public class DashBoard extends AppCompatActivity implements NavigationView.OnNav
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        getData();
         String email;
 
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
@@ -46,7 +57,6 @@ public class DashBoard extends AppCompatActivity implements NavigationView.OnNav
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        ((TextView) navigationView.getHeaderView(0).findViewById(R.id.textViewUserName)).setText("foobar");
         ((TextView) navigationView.getHeaderView(0).findViewById(R.id.textViewEmail)).setText(email);
 
         // Find the view pager that will allow the user to swipe between fragments
@@ -67,6 +77,46 @@ public class DashBoard extends AppCompatActivity implements NavigationView.OnNav
         //   3. Set the tab layout's tab names with the view pager's adapter's titles
         //      by calling onPageTitle()
         tabLayout.setupWithViewPager(viewPager);
+
+    }
+
+    private void getData() {
+        String email;
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        email = preferences.getString(KEY_EMAIL, "");
+        String url = Config.DATA_URL+email;
+        StringRequest stringRequest = new StringRequest(url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                showJSON(response);
+            }
+        },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(DashBoard.this,error.getMessage().toString(), Toast.LENGTH_LONG).show();
+                    }
+                });
+
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(stringRequest);
+    }
+    private void showJSON(String response){
+        String name="";
+        
+        try {
+            JSONObject jsonObject = new JSONObject(response);
+            JSONArray result = jsonObject.getJSONArray(Config.JSON_ARRAY);
+            JSONObject json = result.getJSONObject(0);
+            name = json.getString(Config.KEY_NAME);
+            
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        //textView.setText("Name:\t"+name);
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        //navigationView.setNavigationItemSelectedListener(this);
+        ((TextView) navigationView.getHeaderView(0).findViewById(R.id.textViewUserName)).setText(name);
 
     }
 
