@@ -2,6 +2,7 @@ package dsd.informme.com.helpblox;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.design.widget.NavigationView;
@@ -12,8 +13,6 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
-import android.util.StringBuilderPrinter;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -38,7 +37,7 @@ public class DashBoard extends AppCompatActivity implements NavigationView.OnNav
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getData();
+        getUserName();
         String email;
 
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
@@ -80,42 +79,10 @@ public class DashBoard extends AppCompatActivity implements NavigationView.OnNav
 
     }
 
-    private void getData() {
-        String email;
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
-        email = preferences.getString(KEY_EMAIL, "");
-        String url = Config.DATA_URL+email;
-        StringRequest stringRequest = new StringRequest(url, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                showJSON(response);
-            }
-        },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(DashBoard.this,error.getMessage().toString(), Toast.LENGTH_LONG).show();
-                    }
-                });
+    private void getUserName() {
 
-        RequestQueue requestQueue = Volley.newRequestQueue(this);
-        requestQueue.add(stringRequest);
-    }
-    private void showJSON(String response){
-        String name="";
-        
-        try {
-            JSONObject jsonObject = new JSONObject(response);
-            JSONArray result = jsonObject.getJSONArray(Config.JSON_ARRAY);
-            JSONObject json = result.getJSONObject(0);
-            name = json.getString(Config.KEY_NAME);
-            
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-        //set the username -- that is fetched from database
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        ((TextView) navigationView.getHeaderView(0).findViewById(R.id.textViewUserName)).setText(name);
+        FetchUserName fetchUserName = new FetchUserName();
+        fetchUserName.execute();
 
     }
 
@@ -185,6 +152,58 @@ public class DashBoard extends AppCompatActivity implements NavigationView.OnNav
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
         finish();
+    }
+
+    class FetchUserName extends AsyncTask<Void, Void, Void>{
+
+        public FetchUserName() {
+            super();
+        }
+
+        @Override
+        protected Void doInBackground(Void... params) {
+
+            String email;
+            SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+            email = preferences.getString(KEY_EMAIL, "");
+            String url = Config.DATA_URL+email;
+            StringRequest stringRequest = new StringRequest(url, new Response.Listener<String>() {
+                @Override
+                public void onResponse(String response) {
+                    showJSON(response);
+                }
+            },
+                    new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+                            Toast.makeText(DashBoard.this, "Stop using this app", Toast.LENGTH_LONG).show();
+                        }
+                    });
+
+            RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
+            requestQueue.add(stringRequest);
+
+            return null;
+        }
+
+        private void showJSON(String response){
+            String name="";
+
+            try {
+                JSONObject jsonObject = new JSONObject(response);
+                JSONArray result = jsonObject.getJSONArray(Config.JSON_ARRAY);
+                JSONObject json = result.getJSONObject(0);
+                name = json.getString(Config.KEY_NAME);
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            //set the username -- that is fetched from database
+            NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+            ((TextView) navigationView.getHeaderView(0).findViewById(R.id.textViewUserName)).setText(name);
+
+        }
+
     }
 
 
