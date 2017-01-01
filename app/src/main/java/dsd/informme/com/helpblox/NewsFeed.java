@@ -185,6 +185,7 @@ public class NewsFeed extends Fragment {
         protected void onPostExecute(NewsFeedContent[] result) {
 
             if (result != null) {
+                newsAdapter.clear();
                 for(int i = 0; i < result.length; i++)
                 newsAdapter.add(result[i]);
 
