@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import java.util.ArrayList;
 
 /**
@@ -30,30 +31,19 @@ public class NewsAdapter extends ArrayAdapter<NewsFeedContent> {
 
         View listItemView = convertView;
 
-        if(listItemView == null) {
+        if (listItemView == null) {
 
-            if(position == 0){
 
-                listItemView = LayoutInflater.from(getContext()).inflate(
-                        R.layout.dash_board_post_bar, parent, false);
+            listItemView = LayoutInflater.from(getContext()).inflate(
+                    R.layout.activity_news_layout, parent, false);
 
-                // Finding  all the View in activity_news_layout.xml with the ID and
-                // assigning them to the corresponding view objects
-                userImage = (ImageView) listItemView.findViewById(R.id.user_post_bar_imageView_id);
+            // Finding  all the View in activity_news_layout.xml with the ID and
+            // assigning them to the corresponding view objects
+            userImage = (ImageView) listItemView.findViewById(R.id.user_imageView_id);
+            userName = (TextView) listItemView.findViewById(R.id.news_username_textView_id);
+            dateAndTime = (TextView) listItemView.findViewById(R.id.news_date_time_textView_id);
+            newsContent = (TextView) listItemView.findViewById(R.id.news_content_textView_id);
 
-            } else {
-
-                listItemView = LayoutInflater.from(getContext()).inflate(
-                        R.layout.activity_news_layout, parent, false);
-
-                // Finding  all the View in activity_news_layout.xml with the ID and
-                // assigning them to the corresponding view objects
-                userImage = (ImageView) listItemView.findViewById(R.id.user_imageView_id);
-                userName = (TextView) listItemView.findViewById(R.id.news_username_textView_id);
-                dateAndTime = (TextView) listItemView.findViewById(R.id.news_date_time_textView_id);
-                newsContent = (TextView) listItemView.findViewById(R.id.news_content_textView_id);
-
-            }
 
             //gets item position of the current news.
             NewsFeedContent currentNews = getItem(position);
@@ -61,7 +51,7 @@ public class NewsAdapter extends ArrayAdapter<NewsFeedContent> {
             //Corresponding views are populated
             userImage.setImageResource(currentNews.getImageRecourseId());
 
-            if(userName != null && dateAndTime != null && newsContent != null) {
+            if (userName != null && dateAndTime != null && newsContent != null) {
 
                 //Corresponding views are populated
                 userName.setText(currentNews.getUserName());

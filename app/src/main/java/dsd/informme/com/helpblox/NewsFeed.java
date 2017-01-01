@@ -1,10 +1,8 @@
 package dsd.informme.com.helpblox;
 
-import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -24,7 +22,6 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 
-import static dsd.informme.com.helpblox.LoginActivity.KEY_EMAIL;
 
 /**
  * Created by kaizer on 12/3/16.
@@ -33,7 +30,7 @@ public class NewsFeed extends Fragment {
 
     public static final String DATA_URL = "http://test.artefactplus.com/newsfeed.php";
     public static final String JSON_ARRAY = "users";
-    public static String USER_NAME = "email";
+    public static String USER_NAME = "username";
     public static String STATUS_TIME = "date_time";
     public static String STATUS = "content";
     public static String IMAGE = "name";
@@ -207,8 +204,6 @@ public class NewsFeed extends Fragment {
 
             if (result != null) {
                 newsAdapter.clear();
-                newsAdapter.add(new NewsFeedContent(R.mipmap.ic_launcher));
-
                 for(int i = 0; i < result.length; i++)
                 newsAdapter.add(result[i]);
 
