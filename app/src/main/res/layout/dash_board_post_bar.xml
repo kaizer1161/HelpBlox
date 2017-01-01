@@ -10,13 +10,21 @@
         android:layout_height="50dp"
         android:src="@mipmap/ic_launcher" />
 
-    <TextView
+    <EditText
         android:id="@+id/postBar_editText_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-        android:paddingLeft="10dp"
         android:layout_toRightOf="@+id/user_post_bar_imageView_id"
-        android:hint="Whats on your mind?"/>
+        android:hint="Whats on your mind?"
+        android:paddingLeft="10dp"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
+
+    <Button
+        android:id="@+id/postBtn_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/postBar_editText_id"
+        android:text="Post" />
 
 </RelativeLayout>
