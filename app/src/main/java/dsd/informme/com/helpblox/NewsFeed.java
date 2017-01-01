@@ -30,7 +30,7 @@ public class NewsFeed extends Fragment {
 
     public static final String DATA_URL = "http://test.artefactplus.com/newsfeed.php";
     public static final String JSON_ARRAY = "users";
-    public static String USER_NAME = "username";
+    public static String USER_NAME = "email";
     public static String STATUS_TIME = "date_time";
     public static String STATUS = "content";
     public static String IMAGE = "name";
@@ -63,22 +63,7 @@ public class NewsFeed extends Fragment {
 
         ArrayList<NewsFeedContent> news = new ArrayList<>();
 
-//        news.add(new NewsFeedContent(R.mipmap.ic_launcher));
-
-
-//        news.add(new NewsFeedContent(R.mipmap.ic_launcher, USER_NAME, STATUS_TIME, STATUS));
-//
-
-
         news.add(new NewsFeedContent(R.mipmap.ic_launcher, "Mir Rayan", "Oct 16, 05:54pm", "This is a place holder content."));
-//
-//        news.add(new NewsFeedContent(R.mipmap.ic_launcher, "Proma", "Nov 16, 10:54am", "This is a place holder content, to check if the layout is working properly. When database will be added, contents for this layout will be auto generated."));
-//
-//        news.add(new NewsFeedContent(R.mipmap.ic_launcher, "Fhamida", "Jan 24, 02:54pm", "This is a place holder content, to check if the layout is working properly. When database will be added, contents for this layout will be auto generated. This is a place holder content, to check if the layout is working properly. When database will be added, contents for this layout will be auto generated. This is a place holder content, to check if the layout is working properly. When database will be added, contents for this layout will be auto generated."));
-//
-//        news.add(new NewsFeedContent(R.mipmap.ic_launcher, "Zubi", "july 24, 08:12am", "This is a place holder content, to check if the layout is working properly. When database will be added, contents for this layout will be auto generated."));
-//
-//        news.add(new NewsFeedContent(R.mipmap.ic_launcher, "Mir Rayan", "Oct 16, 05:54pm", "This is a place holder content, to check if the layout is working properly. When database will be added, contents for this layout will be auto generated."));
 
         newsAdapter = new NewsAdapter(getActivity(), news);
         ListView listView = (ListView) rootView.findViewById(R.id.newsView_newsFeed_ListView_id);
@@ -204,6 +189,8 @@ public class NewsFeed extends Fragment {
 
             if (result != null) {
                 newsAdapter.clear();
+                newsAdapter.add(new NewsFeedContent(R.mipmap.ic_launcher));
+
                 for(int i = 0; i < result.length; i++)
                 newsAdapter.add(result[i]);
 
