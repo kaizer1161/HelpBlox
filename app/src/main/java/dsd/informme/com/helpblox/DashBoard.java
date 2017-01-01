@@ -12,8 +12,6 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
-import android.util.StringBuilderPrinter;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -94,7 +92,7 @@ public class DashBoard extends AppCompatActivity implements NavigationView.OnNav
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(DashBoard.this,error.getMessage().toString(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(DashBoard.this, "Stop using this app", Toast.LENGTH_LONG).show();
                     }
                 });
 
@@ -103,13 +101,13 @@ public class DashBoard extends AppCompatActivity implements NavigationView.OnNav
     }
     private void showJSON(String response){
         String name="";
-        
+
         try {
             JSONObject jsonObject = new JSONObject(response);
             JSONArray result = jsonObject.getJSONArray(Config.JSON_ARRAY);
             JSONObject json = result.getJSONObject(0);
             name = json.getString(Config.KEY_NAME);
-            
+
         } catch (JSONException e) {
             e.printStackTrace();
         }
