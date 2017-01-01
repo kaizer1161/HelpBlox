@@ -31,36 +31,38 @@ public class NewsAdapter extends ArrayAdapter<NewsFeedContent> {
 
         View listItemView = convertView;
 
+
         if (listItemView == null) {
 
 
             listItemView = LayoutInflater.from(getContext()).inflate(
                     R.layout.activity_news_layout, parent, false);
 
-            // Finding  all the View in activity_news_layout.xml with the ID and
-            // assigning them to the corresponding view objects
-            userImage = (ImageView) listItemView.findViewById(R.id.user_imageView_id);
-            userName = (TextView) listItemView.findViewById(R.id.news_username_textView_id);
-            dateAndTime = (TextView) listItemView.findViewById(R.id.news_date_time_textView_id);
-            newsContent = (TextView) listItemView.findViewById(R.id.news_content_textView_id);
 
-
-            //gets item position of the current news.
-            NewsFeedContent currentNews = getItem(position);
-
-            //Corresponding views are populated
-            userImage.setImageResource(currentNews.getImageRecourseId());
-
-            if (userName != null && dateAndTime != null && newsContent != null) {
-
-                //Corresponding views are populated
-                userName.setText(currentNews.getUserName());
-                dateAndTime.setText(currentNews.getTimeAndDate());
-                newsContent.setText(currentNews.getNewsContent());
-            }
 
         }
 
+        // Finding  all the View in activity_news_layout.xml with the ID and
+        // assigning them to the corresponding view objects
+        userImage = (ImageView) listItemView.findViewById(R.id.user_imageView_id);
+        userName = (TextView) listItemView.findViewById(R.id.news_username_textView_id);
+        dateAndTime = (TextView) listItemView.findViewById(R.id.news_date_time_textView_id);
+        newsContent = (TextView) listItemView.findViewById(R.id.news_content_textView_id);
+
+        //gets item position of the current news.
+        NewsFeedContent currentNews = getItem(position);
+
+        //Corresponding views are populated
+        userImage.setImageResource(currentNews.getImageRecourseId());
+
+        if (userName != null && dateAndTime != null && newsContent != null) {
+
+            //Corresponding views are populated
+            userName.setText(currentNews.getUserName());
+            dateAndTime.setText(currentNews.getTimeAndDate());
+            newsContent.setText(currentNews.getNewsContent());
+        }
+        
         return listItemView;
     }
 

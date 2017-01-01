@@ -27,7 +27,7 @@ public class NewsFeedTabAdapter extends FragmentPagerAdapter {
             return new NewsFeed();
         }
         else if (position == 2) {
-            return new NewsFeed();
+            return new ProfileFragment();
         }
         else {
             return new NewsFeed();

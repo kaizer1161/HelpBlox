@@ -63,22 +63,7 @@ public class NewsFeed extends Fragment {
 
         ArrayList<NewsFeedContent> news = new ArrayList<>();
 
-//        news.add(new NewsFeedContent(R.mipmap.ic_launcher));
-
-
-//        news.add(new NewsFeedContent(R.mipmap.ic_launcher, USER_NAME, STATUS_TIME, STATUS));
-//
-
-
         news.add(new NewsFeedContent(R.mipmap.ic_launcher, "Mir Rayan", "Oct 16, 05:54pm", "This is a place holder content."));
-//
-//        news.add(new NewsFeedContent(R.mipmap.ic_launcher, "Proma", "Nov 16, 10:54am", "This is a place holder content, to check if the layout is working properly. When database will be added, contents for this layout will be auto generated."));
-//
-//        news.add(new NewsFeedContent(R.mipmap.ic_launcher, "Fhamida", "Jan 24, 02:54pm", "This is a place holder content, to check if the layout is working properly. When database will be added, contents for this layout will be auto generated. This is a place holder content, to check if the layout is working properly. When database will be added, contents for this layout will be auto generated. This is a place holder content, to check if the layout is working properly. When database will be added, contents for this layout will be auto generated."));
-//
-//        news.add(new NewsFeedContent(R.mipmap.ic_launcher, "Zubi", "july 24, 08:12am", "This is a place holder content, to check if the layout is working properly. When database will be added, contents for this layout will be auto generated."));
-//
-//        news.add(new NewsFeedContent(R.mipmap.ic_launcher, "Mir Rayan", "Oct 16, 05:54pm", "This is a place holder content, to check if the layout is working properly. When database will be added, contents for this layout will be auto generated."));
 
         newsAdapter = new NewsAdapter(getActivity(), news);
         ListView listView = (ListView) rootView.findViewById(R.id.newsView_newsFeed_ListView_id);
@@ -112,9 +97,6 @@ public class NewsFeed extends Fragment {
                 // Construct the URL for the OpenWeatherMap query
                 // Possible parameters are avaiable at OWM's forecast API page, at
                 // http://openweathermap.org/API#forecast
-
-//                SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
-//                String email = preferences.getString(KEY_EMAIL, "");
 
                 Uri builtUri = Uri.parse(DATA_URL).buildUpon()
                         .build();
@@ -203,7 +185,6 @@ public class NewsFeed extends Fragment {
         protected void onPostExecute(NewsFeedContent[] result) {
 
             if (result != null) {
-                newsAdapter.clear();
                 for(int i = 0; i < result.length; i++)
                 newsAdapter.add(result[i]);
 
