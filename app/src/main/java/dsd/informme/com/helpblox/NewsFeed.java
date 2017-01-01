@@ -30,7 +30,7 @@ public class NewsFeed extends Fragment {
 
     public static final String DATA_URL = "http://test.artefactplus.com/newsfeed.php";
     public static final String JSON_ARRAY = "users";
-    public static String USER_NAME = "email";
+    public static String USER_NAME = "username";
     public static String STATUS_TIME = "date_time";
     public static String STATUS = "content";
     public static String IMAGE = "name";
@@ -97,9 +97,6 @@ public class NewsFeed extends Fragment {
                 // Construct the URL for the OpenWeatherMap query
                 // Possible parameters are avaiable at OWM's forecast API page, at
                 // http://openweathermap.org/API#forecast
-
-//                SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
-//                String email = preferences.getString(KEY_EMAIL, "");
 
                 Uri builtUri = Uri.parse(DATA_URL).buildUpon()
                         .build();
@@ -188,9 +185,6 @@ public class NewsFeed extends Fragment {
         protected void onPostExecute(NewsFeedContent[] result) {
 
             if (result != null) {
-                newsAdapter.clear();
-                newsAdapter.add(new NewsFeedContent(R.mipmap.ic_launcher));
-
                 for(int i = 0; i < result.length; i++)
                 newsAdapter.add(result[i]);
 

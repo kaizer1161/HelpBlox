@@ -59,6 +59,7 @@ public class CategoryAdapter extends BaseAdapter{
         if (convertView == null) {
             LayoutInflater inflater = (LayoutInflater) context
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
             grid = inflater.inflate(R.layout.activity_category_grid, null);
 
         }
