@@ -4,11 +4,12 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -37,14 +38,14 @@ public class NewsFeed extends Fragment {
 
     private NewsAdapter newsAdapter;
 
+    public NewsFeed() {
+        // Required empty public constructor
+    }
+
     @Override
     public void onStart() {
         super.onStart();
         getStatus();
-    }
-
-    public NewsFeed() {
-        // Required empty public constructor
     }
 
     private void getStatus() {
@@ -65,8 +66,9 @@ public class NewsFeed extends Fragment {
 
         news.add(new NewsFeedContent(R.mipmap.ic_launcher, "Mir Rayan", "Oct 16, 05:54pm", "This is a place holder content."));
 
+        RecyclerView listView = (RecyclerView) rootView.findViewById(R.id.newsView_newsFeed_ListView_id);
+        listView.setLayoutManager(new LinearLayoutManager(getContext()));
         newsAdapter = new NewsAdapter(getActivity(), news);
-        ListView listView = (ListView) rootView.findViewById(R.id.newsView_newsFeed_ListView_id);
         listView.setAdapter(newsAdapter);
 
         return rootView;
@@ -161,11 +163,8 @@ public class NewsFeed extends Fragment {
 
         private NewsFeedContent[] statusValue(String response) throws JSONException {
 
-//            Log.v("Response", "value : " + response);
             JSONObject jsonObject = new JSONObject(response);
             JSONArray result = jsonObject.getJSONArray(JSON_ARRAY);
-
-//            Log.v("result", "value : " + result.length());
 
             NewsFeedContent[] nfc = new NewsFeedContent[result.length()];
 
@@ -185,11 +184,9 @@ public class NewsFeed extends Fragment {
         protected void onPostExecute(NewsFeedContent[] result) {
 
             if (result != null) {
-                newsAdapter.clear();
-                for(int i = 0; i < result.length; i++)
-                newsAdapter.add(result[i]);
-
+                newsAdapter.itemUpdated(result);
             }
+
         }
     }
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ListView xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/newsView_newsFeed_ListView_id"
     android:layout_width="match_parent"
@@ -7,4 +7,4 @@
     android:dividerHeight="10.0dp"
     tools:context="dsd.informme.com.helpblox.DashBoard">
 
-</ListView>
+</android.support.v7.widget.RecyclerView>
