@@ -4,7 +4,7 @@
     android:id="@+id/newsView_newsFeed_ListView_id"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:dividerHeight="10.0dp"
+    android:scrollbars="vertical"
     tools:context="dsd.informme.com.helpblox.DashBoard">
 
 </android.support.v7.widget.RecyclerView>
