@@ -1,9 +1,11 @@
-package dsd.informme.com.helpblox;
+package dsd.informme.com.helpblox.UI_View;
 
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -22,6 +24,10 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
+
+import dsd.informme.com.helpblox.Adapter_Controller.NewsAdapter;
+import dsd.informme.com.helpblox.R;
+import dsd.informme.com.helpblox.data_Model.NewsFeedContent;
 
 
 /**
@@ -66,10 +72,14 @@ public class NewsFeed extends Fragment {
 
         news.add(new NewsFeedContent(R.mipmap.ic_launcher, "Mir Rayan", "Oct 16, 05:54pm", "This is a place holder content."));
 
-        RecyclerView listView = (RecyclerView) rootView.findViewById(R.id.newsView_newsFeed_ListView_id);
-        listView.setLayoutManager(new LinearLayoutManager(getContext()));
+        Drawable dividerDrawable = ContextCompat.getDrawable(getContext(), R.drawable.divider);
+
+        RecyclerView recyclerView = (RecyclerView) rootView.findViewById(R.id.newsView_newsFeed_ListView_id);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         newsAdapter = new NewsAdapter(getActivity(), news);
-        listView.setAdapter(newsAdapter);
+        recyclerView.setAdapter(newsAdapter);
+
+        recyclerView.addItemDecoration(new DividerItemDecoration(dividerDrawable));
 
         return rootView;
     }

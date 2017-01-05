@@ -1,4 +1,4 @@
-package dsd.informme.com.helpblox;
+package dsd.informme.com.helpblox.UI_View;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,15 +8,19 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
+
+import dsd.informme.com.helpblox.R;
 
 
 /**
@@ -26,14 +30,13 @@ import java.util.regex.Pattern;
 
 public class SignupActivity extends AppCompatActivity implements View.OnClickListener {
 
+    public static final String KEY_USERNAME = "username";
+    public static final String KEY_PASSWORD = "password";
+    public static final String KEY_EMAIL = "email";
     /*
      * All Variables are declared here.
      */
     private static final String REGISTER_URL = "http://test.artefactplus.com/index.php";
-    public static final String KEY_USERNAME = "username";
-    public static final String KEY_PASSWORD = "password";
-    public static final String KEY_EMAIL = "email";
-
     Button nextBtn;
     EditText userEditText, emailEditText, passwordEditText, reEnteredPassEditText;
     RequestQueue requestQueue;

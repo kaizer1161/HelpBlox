@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".LoginActivity"
+            android:name=".UI_View.LoginActivity"
             android:theme="@style/LoginTheme">
 
             <intent-filter>
@@ -23,16 +23,16 @@
 
         </activity>
         <activity
-            android:name=".SignupActivity"
+            android:name=".UI_View.SignupActivity"
             android:label="@string/signupPage"
             android:theme="@style/SignupTheme" />
         <activity
-            android:name=".CategoryActivity"
+            android:name=".UI_View.CategoryActivity"
             android:label="@string/categoryPage"
             android:theme="@style/SignupTheme" />
-        <activity android:name=".ProfilePicActivity" />
+        <activity android:name=".UI_View.ProfilePicActivity" />
         <activity
-            android:name=".DashBoard"
+            android:name=".UI_View.DashBoard"
             android:label="@string/title_activity_news_feed"
             android:theme="@style/AppTheme.NoActionBar">
 

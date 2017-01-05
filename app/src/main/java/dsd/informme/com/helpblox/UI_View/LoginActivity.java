@@ -1,4 +1,4 @@
-package dsd.informme.com.helpblox;
+package dsd.informme.com.helpblox.UI_View;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -20,6 +20,8 @@ import com.android.volley.toolbox.Volley;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import dsd.informme.com.helpblox.R;
 
 /**
  * Created by kaizer on 11/21/16.

@@ -1,4 +1,4 @@
-package dsd.informme.com.helpblox;
+package dsd.informme.com.helpblox.Adapter_Controller;
 
 import android.app.Activity;
 import android.support.v7.widget.RecyclerView;
@@ -9,6 +9,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+
+import dsd.informme.com.helpblox.R;
+import dsd.informme.com.helpblox.data_Model.NewsFeedContent;
 
 /**
  * Created by kaizer on 11/24/16.

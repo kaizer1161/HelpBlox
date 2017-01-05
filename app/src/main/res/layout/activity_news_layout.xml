@@ -1,46 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="10dp">
+    card_view:cardElevation="3dp"
+    tools:context="dsd.informme.com.helpblox.UI_View.DashBoard">
 
-    <ImageView
-        android:id="@+id/user_imageView_id"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:src="@mipmap/ic_launcher" />
-
-    <LinearLayout
-        android:id="@+id/header_linearLayout_id"
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/user_imageView_id"
         android:orientation="vertical"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:paddingBottom="10dp">
+        android:padding="10dp">
 
-        <TextView
-            android:id="@+id/news_username_textView_id"
+        <ImageView
+            android:id="@+id/user_imageView_id"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@mipmap/ic_launcher" />
+
+        <LinearLayout
+            android:id="@+id/header_linearLayout_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Mir Rayan"
-            android:textStyle="bold"/>
+            android:layout_toRightOf="@+id/user_imageView_id"
+            android:orientation="vertical"
+            android:paddingBottom="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
+
+            <TextView
+                android:id="@+id/news_username_textView_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Mir Rayan"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/news_date_time_textView_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nov 24 at 12:50pm" />
+
+        </LinearLayout>
 
         <TextView
-            android:id="@+id/news_date_time_textView_id"
+            android:id="@+id/news_content_textView_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nov 24 at 12:50pm" />
+            android:layout_below="@id/header_linearLayout_id"
+            android:hint="placeHolder" />
 
-    </LinearLayout>
+    </RelativeLayout>
 
-    <TextView
-        android:id="@+id/news_content_textView_id"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/header_linearLayout_id"
-        android:hint="placeHolder"/>
+</android.support.v7.widget.CardView>
 
-</RelativeLayout>
+

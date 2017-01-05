@@ -1,4 +1,4 @@
-package dsd.informme.com.helpblox;
+package dsd.informme.com.helpblox.data_Model;
 
 /**
  * Created by kaizer on 11/24/16.

@@ -1,4 +1,4 @@
-package dsd.informme.com.helpblox;
+package dsd.informme.com.helpblox.Adapter_Controller;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -6,7 +6,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.CheckBox;
+
 import java.util.ArrayList;
+
+import dsd.informme.com.helpblox.R;
 
 /**
  * Created by kaizer on 11/21/16.

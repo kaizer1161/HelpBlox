@@ -1,4 +1,4 @@
-package dsd.informme.com.helpblox;
+package dsd.informme.com.helpblox.UI_View;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -21,7 +21,7 @@ import com.android.volley.toolbox.Volley;
 import java.util.HashMap;
 import java.util.Map;
 
-import static dsd.informme.com.helpblox.LoginActivity.KEY_EMAIL;
+import dsd.informme.com.helpblox.R;
 
 /**
  * Created by kaizer on 1/1/17.
@@ -31,13 +31,11 @@ public class ProfileFragment extends android.support.v4.app.Fragment {
 
     private static final String REGISTER_URL = "http://test.artefactplus.com/post.php";
     private static final String KEY_CONTENT= "content";
-
+    EditText postBarEditText;
+    Button postBtn;
     public ProfileFragment() {
         super();
     }
-
-    EditText postBarEditText;
-    Button postBtn;
 
     @Nullable
     @Override
@@ -53,7 +51,7 @@ public class ProfileFragment extends android.support.v4.app.Fragment {
 
 
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
-        email = preferences.getString(KEY_EMAIL, "");
+        email = preferences.getString(LoginActivity.KEY_EMAIL, "");
 
         postBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,7 +87,7 @@ public class ProfileFragment extends android.support.v4.app.Fragment {
             protected Map<String, String> getParams() {
                 Map<String, String> params = new HashMap<String, String>();
                 params.put(KEY_CONTENT, content);
-                params.put(KEY_EMAIL, email);
+                params.put(LoginActivity.KEY_EMAIL, email);
                 return params;
             }
 

@@ -1,9 +1,13 @@
-package dsd.informme.com.helpblox;
+package dsd.informme.com.helpblox.Adapter_Controller;
 
 import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+
+import dsd.informme.com.helpblox.R;
+import dsd.informme.com.helpblox.UI_View.NewsFeed;
+import dsd.informme.com.helpblox.UI_View.ProfileFragment;
 
 /**
  * Created by kaizer on 12/3/16.

@@ -1,4 +1,4 @@
-package dsd.informme.com.helpblox;
+package dsd.informme.com.helpblox.UI_View;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -29,7 +29,11 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import static dsd.informme.com.helpblox.LoginActivity.KEY_EMAIL;
+import dsd.informme.com.helpblox.Adapter_Controller.NewsFeedTabAdapter;
+import dsd.informme.com.helpblox.R;
+import dsd.informme.com.helpblox.data_Model.Config;
+
+import static dsd.informme.com.helpblox.UI_View.LoginActivity.KEY_EMAIL;
 
 
 public class DashBoard extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {

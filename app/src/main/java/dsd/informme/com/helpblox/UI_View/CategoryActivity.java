@@ -1,15 +1,16 @@
-package dsd.informme.com.helpblox;
+package dsd.informme.com.helpblox.UI_View;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.GridView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
+
+import dsd.informme.com.helpblox.Adapter_Controller.CategoryAdapter;
+import dsd.informme.com.helpblox.R;
 
 /**
  * Created by kaizer on 11/21/16.
