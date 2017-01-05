@@ -129,10 +129,11 @@ public class DashBoard extends AppCompatActivity implements NavigationView.OnNav
         int id = item.getItemId();
 
         if (id == R.id.nav_newsFeed_id) {
-            // Handle the camera action
-        } else if (id == R.id.nav_category_id) {
 
-        } else if (id == R.id.nav_slideshow) {
+            Intent intent = new Intent(this, DashBoard.class);
+            startActivity(intent);
+            
+        } else if (id == R.id.nav_category_id) {
 
         } else if (id == R.id.nav_settings_id) {
 
